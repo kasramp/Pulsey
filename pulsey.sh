@@ -16,7 +16,7 @@
 
 
 backtitle="Pulsey v0.1"
-dialog --backtitle "$backtitle" --title "Welcome" --msgbox "This utility allows you to switch sound card easily.\n\nIt is a wrapper on top of 'pacmd' for easy configuration." "12" "40"
+dialog --keep-tite --backtitle "$backtitle" --title "Welcome" --msgbox "This utility allows you to switch sound card easily.\n\nIt is a wrapper on top of 'pacmd' for easy configuration." "12" "40"
 
 IFS=$'\n'
 sound_cards=($(pacmd list-cards |  grep -Po '(?<=index:\s|name:\s)[^\s]*' | tr -d "<" | tr -d ">"))
@@ -55,12 +55,11 @@ done
 
 unset IFS
 
-card_response=$(dialog --backtitle "$backtitle" --title "Cards" --scrollbar --nocancel --radiolist --output-fd 1 "Select a sound card:" 15 70 50 $sound_selector)
+card_response=$(dialog --keep-tite --backtitle "$backtitle" --title "Cards" --scrollbar --nocancel --radiolist --output-fd 1 "Select a sound card:" 15 70 50 $sound_selector)
 result=$?
 
 if [ $result -eq 255 ]
 then
-    reset
     exit 0
 fi
  
@@ -87,7 +86,7 @@ do
     fi
 done
 
-cmd="dialog --backtitle \"$backtitle\" --title \"Profile\" --scrollbar --nocancel --radiolist --output-fd 1 'Select a profile:' 15 120 10 $profile_selector"
+cmd="dialog --keep-tite --backtitle \"$backtitle\" --title \"Profile\" --scrollbar --nocancel --radiolist --output-fd 1 'Select a profile:' 15 120 10 $profile_selector"
 
 response=$(eval $cmd)
 result=$?
@@ -102,6 +101,3 @@ then
         pulseaudio -k
     fi
 fi
-
-reset
-
