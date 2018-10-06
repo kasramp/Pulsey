@@ -28,11 +28,11 @@ You can always support me by donating any amount of money :-)
 <p>
 <img src="https://www.gnu.org/graphics/gplv3-127x51.png" alt="License"/>
 </p>
-LetraX is free software; you can redistribute it and/or modify
+Pulsey is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 3
 as published by the Free Software Foundation.
 
-LetraX is distributed in the hope that it will be useful,
+Pulsey is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.  <http://www.gnu.org/licenses/>
