@@ -60,7 +60,7 @@ result=$?
 
 if [ $result -eq 255 ]
 then
-    exit 0
+    kill -INT $$
 fi
  
 selected_card=$(pacmd list-cards | awk "/index: $card_response/,/ports:/")
